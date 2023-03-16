@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", ...fontFamily.sans],
+        anton: ["var(--font-anton)", ...fontFamily.sans],
       },
     },
   },
