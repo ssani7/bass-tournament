@@ -60,7 +60,8 @@ const DISABLED: Record<ButtonVariant, string> = {
 };
 
 const HOVER: Record<ButtonVariant, string> = {
-  primary: "hover:bg-orange-500 hover:text-white",
+  primary:
+    "bg-gradient-to-t hover:to-[rgb(255,81,24)104%] hover:from-[rgb(255,104,27)-7%]",
   [ButtonVariant.PRIMARY_MAIN]:
     "hover:border-violet-500 hover:text-white hover:bg-violet-200",
   default: "hover:border-gray-300 hover:text-gray-500 hover:bg-gray-50",
