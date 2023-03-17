@@ -19,7 +19,7 @@ export const Header = () => {
       className={clsx(
         "bg-neutral-800",
         "h-12",
-        "fixed z-10 right-0 left-0 top-0",
+        "fixed z-20 right-0 left-0 top-0",
         "block"
       )}
     >
@@ -41,14 +41,20 @@ export const Header = () => {
               </li>
             ))}
 
-            <li className=" cursor-pointer hover:bg-blue-400 bg-blue-500 rounded-md px-6 py-1 font-bold">
+            <li
+              className={clsx(
+                "cursor-pointer ",
+                "hover: bg-gradient-to-t from-blue-500 to-blue-400 ",
+                "rounded-md px-5 py-2 font-bold"
+              )}
+            >
               Get Plarium Play
             </li>
           </ul>
         </nav>
         <div className="pl-2 flex-none">
           <button className="rounded-md px-3 font-bold h-8 text-blue-400 bg-white">
-            Log in
+            Log In
           </button>
         </div>
       </div>

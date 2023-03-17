@@ -4,6 +4,7 @@ export enum ButtonSize {
   SMALL = "sm",
   MEDIUM = "md",
   LARGE = "lg",
+  EXTRA_LARGE = "xl",
 }
 
 export enum ButtonVariant {
@@ -25,6 +26,7 @@ const HEIGHTS: Record<ButtonSize, string> = {
   sm: "h-8",
   md: "h-10",
   lg: "h-11",
+  xl: "h-14",
 };
 
 const PADDINGS: Record<ButtonSize, string> = {
@@ -32,6 +34,7 @@ const PADDINGS: Record<ButtonSize, string> = {
   sm: "px-6",
   md: "px-6",
   lg: "px-6",
+  xl: "px-8",
 };
 
 const TEXT_SIZE: Record<ButtonSize, string> = {
@@ -39,6 +42,7 @@ const TEXT_SIZE: Record<ButtonSize, string> = {
   sm: "text-sm",
   md: "text-sm",
   lg: "text-base",
+  xl: "text-2xl",
 };
 
 const DISABLED: Record<ButtonVariant, string> = {
@@ -85,7 +89,7 @@ const FOREGROUNDS: Record<ButtonVariant, string> = {
 };
 
 const BACKGROUNDS: Record<ButtonVariant, string> = {
-  primary: "bg-orange-600",
+  primary: "bg-gradient-to-t to-[rgb(250,84,0)105%] from-[rgb(250,62,0)-7%]",
   [ButtonVariant.PRIMARY_MAIN]: "bg-primary",
   default: "bg-white",
   secondary: "bg-white",
@@ -99,7 +103,7 @@ const BACKGROUNDS: Record<ButtonVariant, string> = {
 };
 
 const BORDER_COLORS: Record<ButtonVariant, string> = {
-  primary: "border-primary-dark",
+  primary: "",
   [ButtonVariant.PRIMARY_MAIN]: "border-primary-dark",
   default: "border-gray-300",
   secondary: "border-gray-300",
@@ -134,6 +138,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = "default" as ButtonVariant,
       disabled,
       containerClassName = "",
+
       block = false,
       loading = false,
       rounded = true,
@@ -141,7 +146,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const className = `flex items-center justify-center border
+    const cls = `flex items-center justify-center
     ${HEIGHTS[size]} 
     ${PADDINGS[size]} 
     ${TEXT_SIZE[size]}
@@ -162,7 +167,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...(props as HTMLProps<HTMLButtonElement>)}
         ref={ref as MutableRefObject<HTMLButtonElement>}
         type={"button"}
-        className={className}
+        className={cls}
       >
         {children}
       </button>

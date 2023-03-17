@@ -1,4 +1,5 @@
 import { Header } from "@/components/molecules";
+import { Hero } from "@/components/molecules/hero";
 import Head from "next/head";
 
 export default function Home() {
@@ -10,9 +11,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />
-      <div className={"flex items-center justify-center h-screen flex-col"}>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <p className={"font-anton text-7xl"}>junel sacro</p>
+      <div className="pt-12">
+        <Hero />
       </div>
     </>
   );
