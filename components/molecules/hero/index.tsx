@@ -4,6 +4,7 @@ import { Tag } from "@/components/atom/tag";
 import { HERO_IMAGE } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { Cavet } from "../icons";
 
 export const Hero = () => {
   return (
@@ -37,14 +38,19 @@ export const Hero = () => {
             fantasy Collection MMORPG!
           </div>
           <div className="flex">
-            <Button size={ButtonSize.LARGE} variant={ButtonVariant.PRIMARY}>
+            <Button
+              className="shadow-lg"
+              size={ButtonSize.LARGE}
+              variant={ButtonVariant.PRIMARY}
+            >
               Download
             </Button>
             <Link
-              className="ml-5 text-white font-semibold flex items-center"
+              className="group ml-5 text-white font-semibold items-center inline-flex"
               href={"/"}
             >
               Learn More
+              <Cavet className="group-hover:translate-x-1 ease-in duration-[0.3s] delay-[0s]" />
             </Link>
           </div>
         </div>

@@ -103,7 +103,7 @@ const BACKGROUNDS: Record<ButtonVariant, string> = {
 };
 
 const BORDER_COLORS: Record<ButtonVariant, string> = {
-  primary: "",
+  primary: "border-primary-dark",
   [ButtonVariant.PRIMARY_MAIN]: "border-primary-dark",
   default: "border-gray-300",
   secondary: "border-gray-300",
@@ -138,7 +138,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = "default" as ButtonVariant,
       disabled,
       containerClassName = "",
-
       block = false,
       loading = false,
       rounded = true,
@@ -146,7 +145,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const cls = `flex items-center justify-center
+    const cls = `flex items-center justify-center shadow-lg
     ${HEIGHTS[size]} 
     ${PADDINGS[size]} 
     ${TEXT_SIZE[size]}
