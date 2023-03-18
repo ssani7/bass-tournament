@@ -1,6 +1,4 @@
-import { Header } from "@/components/molecules";
-import { GamesPromotions } from "@/components/molecules/gamespromoton";
-import { Hero } from "@/components/molecules/hero";
+import { GamesPromotions, Header, Hero } from "@/components/molecules";
 import Head from "next/head";
 
 export default function Home() {

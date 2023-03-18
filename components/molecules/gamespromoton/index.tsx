@@ -1,6 +1,10 @@
-import { Button, ButtonSize, ButtonVariant } from "@/components/atom/button";
-import { Rating } from "@/components/atom/rating";
-import { Tag } from "@/components/atom/tag";
+import {
+  Button,
+  ButtonSize,
+  ButtonVariant,
+  Rating,
+  Tag,
+} from "@/components/atom";
 import { MECHA_ARM, MECHA_ARM_COVER } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
