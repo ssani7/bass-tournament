@@ -8,7 +8,7 @@ import { Cavet } from "../icons";
 
 export const Hero = () => {
   return (
-    <section className="h-[650px]  relative">
+    <section className="h-[650px] w-full relative">
       <div className="mx-auto max-w-4xl px-10 pt-[100px]">
         <div className="z-10 relative flex flex-col gap-3">
           <h1 className="text-5xl font-anton uppercase text-white tracking-wider">
@@ -17,10 +17,12 @@ export const Hero = () => {
           <div className="flex">
             <div className="mr-3">
               <div className="flex flex-col ">
-                <span className="text-xs text-white/80 font-semibold">
+                <span className="text-xs text-white/80 font-semibold text-center">
                   Rating
                 </span>
-                <span className="font-bold text-xl text-white">4.9</span>
+                <span className="font-bold text-xl text-white text-center">
+                  4.9
+                </span>
                 <span>
                   <Rating />
                 </span>
@@ -40,7 +42,7 @@ export const Hero = () => {
           <div className="flex">
             <Button
               className="shadow-lg"
-              size={ButtonSize.LARGE}
+              size={ButtonSize.EXTRA_LARGE}
               variant={ButtonVariant.PRIMARY}
             >
               Download

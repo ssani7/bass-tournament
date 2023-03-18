@@ -1,4 +1,5 @@
 import { Header } from "@/components/molecules";
+import { GamesPromotions } from "@/components/molecules/gamespromoton";
 import { Hero } from "@/components/molecules/hero";
 import Head from "next/head";
 
@@ -11,8 +12,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />
-      <div className="pt-12">
-        <Hero />
+      <div className="pt-12 bg-slate-50 relative">
+        <div className="relative flex flex-col">
+          <Hero />
+          <GamesPromotions />
+        </div>
+        <div className="bg-white h-80"></div>
       </div>
     </>
   );
