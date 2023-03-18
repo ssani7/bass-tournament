@@ -44,8 +44,9 @@ export const Header = () => {
             <li
               className={clsx(
                 "cursor-pointer ",
-                "hover: bg-gradient-to-t from-blue-500 to-blue-400 ",
-                "rounded-md px-5 py-2 font-bold"
+                "from-[rgb(71,121,203)99%] to-[rgb(91,143,229)] ",
+                "rounded-md px-5 py-2 font-bold",
+                "bg-gradient-to-t hover:from-[rgb(97,156,255)] hover:to-[rgb(85,140,230)] "
               )}
             >
               Get Plarium Play

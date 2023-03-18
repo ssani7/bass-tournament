@@ -15,8 +15,8 @@ export const GamesPromotions = () => {
       }
     >
       <div className="relative w-[433px] h-[24.5rem] flex flex-shrink-0">
-        <div>
-          <span className="h-[510px] w-[400px] absolute left-[10px] bottom-[-75px] drop-shadow-xl bg-white rounded-lg">
+        <div className="">
+          <div className="absolute h-[510px] w-[400px] left-[10px] bottom-[-75px] drop-shadow-xl bg-white rounded-lg">
             <Image
               className="rounded-[8px]"
               src={MECHA_ARM_COVER}
@@ -25,10 +25,10 @@ export const GamesPromotions = () => {
               fill
               alt="game"
             />
-          </span>
-          <span className="absolute z-50 left-8 bottom-[-75px] h-[650px] w-[460px]">
-            <Image src={MECHA_ARM} fill alt="hero" />
-          </span>
+          </div>
+        </div>
+        <div className="absolute h-[650px] w-[460px] left-8 bottom-[-75px] transition-[transform,translate] ease-[ease,ease] duration-[0.3s,0.3s] delay-[0s,0s] hover:translate-y-[-9px] hover:scale-[1.03] z-[1]">
+          <Image src={MECHA_ARM} fill alt="hero" />
         </div>
       </div>
       <div className="pl-24  pt-20 z-[250]">
@@ -51,11 +51,16 @@ export const GamesPromotions = () => {
               </div>
             </div>
             <div className="flex self-center flex-wrap max-w-[350px]">
-              {["Cross-Platform", "Action", "81+ Downloads"].map((tag) => (
-                <Tag className=" text-black/75 bg-[rgb(47,47,51)]/10" key={tag}>
-                  {tag}
-                </Tag>
-              ))}
+              {["Cross-Platform", "Action", "PvP", "81+ Downloads"].map(
+                (tag) => (
+                  <Tag
+                    className=" text-black/75 bg-[rgb(47,47,51)]/10"
+                    key={tag}
+                  >
+                    {tag}
+                  </Tag>
+                )
+              )}
             </div>
           </div>
           <div className="text-gray-500 mt-15px text-[18px] mb-[20px]">

@@ -12,7 +12,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />
-      <div className="pt-12 bg-slate-50 relative">
+      <div className="pt-12 bg-[rgb(240,240,240)] relative">
         <div className="relative flex flex-col">
           <Hero />
           <GamesPromotions />
