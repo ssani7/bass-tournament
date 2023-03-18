@@ -15,14 +15,13 @@ export const GamesPromotions = () => {
   return (
     <Card
       containerClassName={
-        "mx-auto -mt-6 mb-[70px] z-[200] relative w-[1160px] px-[70px] pb-[50px] flex"
+        "relative mx-auto mt-[-20px] mb-[70px] z-[200] w-[1160px] px-[70px] pb-[50px] pt-0 flex"
       }
     >
       <div className="relative w-[433px] h-[24.5rem] flex flex-shrink-0">
-        <div className="">
-          <div className="absolute h-[510px] w-[400px] left-[10px] bottom-[-75px] drop-shadow-xl bg-white rounded-lg">
+        <div>
+          <div className="absolute overflow-hidden h-[510px] w-[400px] left-[10px] bottom-[-75px] drop-shadow-xl bg-white rounded-[8px]">
             <Image
-              className="rounded-[8px]"
               src={MECHA_ARM_COVER}
               placeholder={"blur"}
               blurDataURL={MECHA_ARM_COVER}
@@ -30,13 +29,20 @@ export const GamesPromotions = () => {
               alt="game"
             />
           </div>
-        </div>
-        <div className="absolute h-[650px] w-[460px] left-8 bottom-[-75px] transition-[transform,translate] ease-[ease,ease] duration-[0.3s,0.3s] delay-[0s,0s] hover:translate-y-[-9px] hover:scale-[1.03] z-[1]">
-          <Image src={MECHA_ARM} fill alt="hero" />
+
+          <div className="z-[1] absolute h-[650px] w-[460px] left-[30px] bottom-[-75px] transition-[transform,translate] ease-[ease,ease] duration-[0.3s,0.3s] delay-[0s,0s] lg:hover:translate-y-[-9px] lg:hover:scale-[1.03] ">
+            <Image
+              src={MECHA_ARM}
+              placeholder={"blur"}
+              blurDataURL={MECHA_ARM}
+              fill
+              alt="hero"
+            />
+          </div>
         </div>
       </div>
-      <div className="pl-24  pt-20 z-[250]">
-        <div className="flex flex-col max-w-[450px]">
+      <div className="pl-24  pt-20 z-[250] relative">
+        <div className="flex flex-col max-w-[450px] relative">
           <h2 className="font-anton text-4xl tracking-[2px] font-bold uppercase text-slate-800 mb-5">
             Mecha Arm
           </h2>

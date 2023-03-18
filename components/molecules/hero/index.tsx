@@ -8,8 +8,8 @@ import { Cavet } from "../icons";
 
 export const Hero = () => {
   return (
-    <section className="h-[650px] w-full relative">
-      <div className="mx-auto max-w-4xl px-10 pt-[100px]">
+    <div className="h-[650px] w-full relative">
+      <div className="mx-auto w-[1000px] pl-[10px] pt-[100px]">
         <div className="z-10 relative flex flex-col gap-3">
           <h1 className="text-5xl font-anton uppercase text-white tracking-wider">
             RAID: SHADOW <br /> LEGENDS
@@ -69,6 +69,6 @@ export const Hero = () => {
           />
         </picture>
       </div>
-    </section>
+    </div>
   );
 };

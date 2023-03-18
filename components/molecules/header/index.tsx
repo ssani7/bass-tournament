@@ -19,8 +19,8 @@ export const Header = () => {
     <header
       className={clsx(
         "bg-neutral-800",
-        "h-12",
-        "fixed z-20 right-0 left-0 top-0",
+        "h-[55px]",
+        "fixed z-[5002] right-0 left-0 top-0",
         "block"
       )}
     >
@@ -44,9 +44,9 @@ export const Header = () => {
 
             <li
               className={clsx(
-                "cursor-pointer ",
+                "cursor-pointer flex items-center ",
                 "from-[rgb(71,121,203)99%] to-[rgb(91,143,229)] ",
-                "rounded-md px-5 py-2 font-bold",
+                "rounded-md px-[15px] font-bold text-center h-[35px]",
                 "bg-gradient-to-t hover:from-[rgb(97,156,255)] hover:to-[rgb(85,140,230)] "
               )}
             >
