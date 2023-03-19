@@ -5,7 +5,7 @@ import {
   Rating,
   Tag,
 } from "@/components/atom";
-import { MECHA_ARM, MECHA_ARM_COVER } from "@/utils/constants";
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { Card } from "../card";
@@ -25,11 +25,21 @@ export const GamesPromotions = (props: Props) => {
   const { src, name, rating, tags, src_bg, description, className } = props;
   return (
     <Card
-      containerClassName={`relative mx-auto mt-[-20px] mb-[70px] z-[200] w-[1160px] px-[70px] pb-[50px] pt-0 flex ${className}`}
+      containerClassName={`relative mx-auto mt-[-20px] mb-[70px] z-[200] w-[1160px] px-[70px]  pt-0 flex ${
+        className
+          ? `px-[80px] pb-[45px] my-[70px] ${className} `
+          : "px-[70px] pb-[50px] "
+      }`}
     >
       <div className="relative w-[433px] h-[24.5rem] flex flex-shrink-0">
         <div>
-          <div className="absolute overflow-hidden h-[510px] w-[400px] left-[10px] bottom-[-75px] drop-shadow-xl bg-white rounded-[8px]">
+          <div
+            className={clsx(
+              `${
+                className && "left-[35px]"
+              } absolute overflow-hidden h-[510px] w-[400px] left-[10px] bottom-[-75px] drop-shadow-xl bg-white rounded-[8px]`
+            )}
+          >
             <Image
               src={src_bg}
               placeholder={"blur"}
@@ -39,7 +49,18 @@ export const GamesPromotions = (props: Props) => {
             />
           </div>
 
-          <div className="z-[1] absolute h-[650px] w-[460px] left-[30px] bottom-[-75px] transition-[transform,translate] ease-[ease,ease] duration-[0.3s,0.3s] delay-[0s,0s] lg:hover:translate-y-[-9px] lg:hover:scale-[1.03] ">
+          <div
+            className={clsx(
+              `${
+                className
+                  ? "left-[-15px] h-[620px] bottom-[-73px]"
+                  : "left-[30px] bottom-[-75px] h-[650px]"
+              }`,
+              "z-[1] absolute",
+              "w-[460px]",
+              `transition-[transform,translate] ease-[ease,ease] duration-[0.3s,0.3s] delay-[0s,0s] lg:hover:translate-y-[-9px] lg:hover:scale-[1.03]`
+            )}
+          >
             <Image
               src={src}
               placeholder={"blur"}
@@ -75,7 +96,7 @@ export const GamesPromotions = (props: Props) => {
             </div>
             <div className="flex self-center flex-wrap max-w-[350px]">
               {tags.map((tag) => (
-                <Tag className=" text-black/75 bg-[rgb(47,47,51)]/10" key={tag}>
+                <Tag variant={"primary"} key={tag}>
                   {tag}
                 </Tag>
               ))}

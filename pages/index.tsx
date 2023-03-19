@@ -20,7 +20,7 @@ export default function Home() {
                 return (
                   <GamesPromotions
                     key={data.name}
-                    className="flex-row-reverse"
+                    className="flex-row-reverse "
                     {...data}
                   />
                 );
