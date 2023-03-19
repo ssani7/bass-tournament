@@ -7,13 +7,15 @@ export const CrossPlatformSection = () => {
   return (
     <div className="pt-[40px] pb-[80px] bg-[#191b1f] flex justify-center w-full ">
       <Card
+        variant={"dark"}
         containerClassName={
-          "bg-[rgb(34,37,43)] rounded-[8px] pr-[55px] pb-[45px] pt-[35px] pl-[12px]"
+          "rounded-[8px] pr-[55px] pb-[45px] pt-[35px] pl-[12px]"
         }
       >
         <div className="flex w-[1140px]">
-          <div className="relative object-contain h-24">
+          <div className="relative lg: w-3/5 flex flex-shrink-0 justify-center">
             <Image
+              className="object-contain"
               placeholder={"blur"}
               blurDataURL={GAMES}
               src={GAMES}

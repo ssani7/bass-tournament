@@ -1,13 +1,28 @@
 import { forwardRef, ReactNode } from "react";
 
+type CardVariant = "white" | "dark";
+
 type CardProps = {
   containerClassName?: string;
   children: ReactNode;
+  variant?: CardVariant;
+};
+const BACKGROUND: Record<CardVariant, string> = {
+  white: "bg-white",
+  dark: "bg-[rgb(34,37,43)]",
 };
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ containerClassName = "", children, ...props }, ref) => {
-    const className = `bg-white rounded-lg w-[1160px] ${containerClassName}`;
+  (
+    {
+      containerClassName = "",
+      variant = "white" as CardVariant,
+      children,
+      ...props
+    },
+    ref
+  ) => {
+    const className = `rounded-lg w-[1160px] ${BACKGROUND[variant]} ${containerClassName}`;
     return (
       <div ref={ref} {...props} className={className}>
         {children}
