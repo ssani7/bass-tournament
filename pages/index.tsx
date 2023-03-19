@@ -1,4 +1,5 @@
 import { GamesPromotions, Header, Hero } from "@/components/molecules";
+import { Promotion } from "@/data";
 import Head from "next/head";
 
 export default function Home() {
@@ -14,7 +15,18 @@ export default function Home() {
         <div className="flex flex-col bg-[rgb(240,240,240)] flex-grow-[1] flex-shrink-0">
           <div className="relative">
             <Hero />
-            <GamesPromotions />
+            {Promotion.map((data, i) => {
+              if (i === 1)
+                return (
+                  <GamesPromotions
+                    key={data.name}
+                    className="flex-row-reverse"
+                    {...data}
+                  />
+                );
+
+              return <GamesPromotions key={data.name} {...data} />;
+            })}
           </div>
         </div>
       </div>
