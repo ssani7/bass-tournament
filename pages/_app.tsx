@@ -1,4 +1,6 @@
 import "@/styles/globals.css";
+import "swiper/css";
+import "swiper/css/autoplay";
 import type { AppProps } from "next/app";
 import { Inter, Anton } from "next/font/google";
 

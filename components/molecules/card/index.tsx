@@ -7,7 +7,7 @@ type CardProps = {
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ containerClassName = "", children, ...props }, ref) => {
-    const className = `bg-white rounded-lg ${containerClassName}`;
+    const className = `bg-white rounded-lg w-[1160px] ${containerClassName}`;
     return (
       <div ref={ref} {...props} className={className}>
         {children}

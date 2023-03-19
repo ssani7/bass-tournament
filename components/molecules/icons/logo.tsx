@@ -1,9 +1,8 @@
-export const Logo = () => {
+export const Logo = ({ ...etcProps }) => {
   return (
     <svg
+      {...etcProps}
       xmlns="http://www.w3.org/2000/svg"
-      width="56.03"
-      height="inherit"
       viewBox="0 0 56.03 42"
     >
       <path

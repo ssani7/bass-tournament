@@ -18,7 +18,7 @@ export const Header = () => {
   return (
     <header
       className={clsx(
-        "bg-neutral-800",
+        "bg-[rgb(25,27,31)]",
         "h-[55px]",
         "fixed z-[5002] right-0 left-0 top-0",
         "block"
@@ -29,7 +29,7 @@ export const Header = () => {
           href={"/"}
           className="h-6 flex-none flex items-center justify-center"
         >
-          <Logo />
+          <Logo heigth={"54"} width={"56.03"} />
         </Link>
         <nav className="flex grow justify-center h-full">
           <ul className={clsx("text-white", "flex items-center gap-5 h-full")}>
@@ -55,7 +55,7 @@ export const Header = () => {
           </ul>
         </nav>
         <div className="pl-2 flex-none">
-          <button className="rounded-md px-3 font-bold h-8 text-blue-400 bg-white">
+          <button className="rounded-md px-[17px] font-bold h-8 text-blue-400 bg-white">
             Log In
           </button>
         </div>
