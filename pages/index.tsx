@@ -1,6 +1,7 @@
 import { GamesPromotions, Header, Hero } from "@/components/molecules";
 import { AllGames } from "@/components/molecules/games";
 import { Benefits } from "@/components/organism/benefits";
+import { Blog } from "@/components/organism/blog";
 import { CrossPlatformSection } from "@/components/organism/crossplatform";
 import { Promotion } from "@/data";
 import Head from "next/head";
@@ -33,6 +34,7 @@ export default function Home() {
             <AllGames />
             <Benefits />
             <CrossPlatformSection />
+            <Blog />
           </div>
         </div>
       </div>
