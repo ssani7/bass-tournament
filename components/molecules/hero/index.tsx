@@ -1,10 +1,15 @@
 import { Button, ButtonSize, ButtonVariant } from "@/components/atom/button";
 import { Rating } from "@/components/atom/rating";
 import { Tag } from "@/components/atom/tag";
-import { HERO_IMAGE } from "@/utils/constants";
+import {
+  HERO_IMAGE_MOB,
+  HERO_IMAGE_PC,
+  HERO_IMAGE_TAB,
+} from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { Cavet } from "../icons";
+import { isMobile, isTablet, isDesktop } from "react-device-detect";
 
 export const Hero = () => {
   return (
@@ -59,14 +64,21 @@ export const Hero = () => {
       </div>
       <div className="absolute inset-0 h-full w-full">
         <picture>
-          <Image
-            src={HERO_IMAGE}
+          <source media="(max-width: 767px)" srcSet={HERO_IMAGE_MOB} />
+          <source media="(max-width: 1023px)" srcSet={HERO_IMAGE_TAB} />
+          <img
+            className="object-cover object-[center_top]"
+            src={HERO_IMAGE_PC}
+            alt=""
+          />
+          {/* <Image
+            src={HERO_IMAGE_PC}
             alt={"hero"}
             priority
             fill
             placeholder="blur"
-            blurDataURL={HERO_IMAGE}
-          />
+            blurDataURL={HERO_IMAGE_PC}
+          /> */}
         </picture>
       </div>
     </div>
