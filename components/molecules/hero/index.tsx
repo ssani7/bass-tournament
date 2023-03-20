@@ -6,10 +6,8 @@ import {
   HERO_IMAGE_PC,
   HERO_IMAGE_TAB,
 } from "@/utils/constants";
-import Image from "next/image";
 import Link from "next/link";
 import { Cavet } from "../icons";
-import { isMobile, isTablet, isDesktop } from "react-device-detect";
 
 export const Hero = () => {
   return (
