@@ -42,7 +42,7 @@ const TEXT_SIZE: Record<ButtonSize, string> = {
   sm: "text-sm",
   md: "text-sm",
   lg: "text-base",
-  xl: "text-2xl",
+  xl: "text-xl",
 };
 
 const DISABLED: Record<ButtonVariant, string> = {

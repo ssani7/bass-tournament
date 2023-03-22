@@ -12,12 +12,12 @@ import { Cavet } from "../icons";
 export const Hero = () => {
   return (
     <div className="h-[650px] w-full relative">
-      <div className="mx-auto w-[1000px] pl-[10px] pt-[100px]">
+      <div className=" mx-auto md:pt-[75px] md:pl-12 lg:w-[1000px] lg:pl-[10px] lg:pt-[100px]">
         <div className="z-10 relative flex flex-col gap-3">
-          <h1 className="text-5xl font-anton uppercase text-white tracking-wider">
+          <h1 className=" md:text-[32px] lg:text-5xl font-anton uppercase text-white tracking-wider">
             RAID: SHADOW <br /> LEGENDS
           </h1>
-          <div className="flex">
+          <div className="hidden lg:flex">
             <div className="mr-3">
               <div className="flex flex-col ">
                 <span className="text-xs text-white/80 font-semibold text-center">
@@ -37,14 +37,14 @@ export const Hero = () => {
               ))}
             </div>
           </div>
-          <div className="text-white my-3 lg: max-w-lg text-lg">
+          <div className="text-white md:mt-0 lg:my-3 lg: max-w-lg md:text-base lg:text-lg">
             Collect over 400 Champions and take down your opponents in Raid:
             Shadow Legends. Explore 1+ million Champion builds in this dark
             fantasy Collection MMORPG!
           </div>
           <div className="flex">
             <Button
-              className="shadow-lg"
+              containerClassName="shadow-xl md:min-h-[50px] h-5 font-semibold text-5"
               size={ButtonSize.EXTRA_LARGE}
               variant={ButtonVariant.PRIMARY}
             >
