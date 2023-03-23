@@ -74,12 +74,12 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="max-md:-order-1 h-[320px] relative md:absolute lg:absolute inset-0 lg:h-full w-full">
+      <div className="max-md:-order-1 h-[320px] md:h-full relative md:absolute lg:absolute inset-0 lg:h-full w-full">
         <picture>
           <source media="(max-width: 767px)" srcSet={HERO_IMAGE_MOB} />
           <source media="(max-width: 1023px)" srcSet={HERO_IMAGE_TAB} />
           <img
-            className="object-cover object-[center_top]"
+            className="object-cover object-[center_top] w-full h-full"
             src={HERO_IMAGE_PC}
             alt=""
           />

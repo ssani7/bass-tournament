@@ -22,7 +22,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     },
     ref
   ) => {
-    const className = `rounded-lg w-[1160px] ${BACKGROUND[variant]} ${containerClassName}`;
+    const className = `rounded-lg lg:w-[1160px] ${BACKGROUND[variant]} ${containerClassName}`;
     return (
       <div ref={ref} {...props} className={className}>
         {children}

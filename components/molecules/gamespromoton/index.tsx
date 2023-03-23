@@ -25,22 +25,28 @@ export const GamesPromotions = (props: Props) => {
   const { src, name, rating, tags, src_bg, description, className } = props;
   return (
     <Card
-      containerClassName={`relative mx-auto mt-[-20px] mb-[70px] z-[200] w-[1160px] px-[70px]  pt-0 flex ${
-        className
-          ? `px-[80px] pb-[45px] my-[70px] ${className} `
-          : "px-[70px] pb-[50px] "
-      }`}
+      containerClassName={clsx(
+        "h-auto w-[calc(100%-30px)]",
+        "max-md:bg-[rgb(55,64,84)]",
+        "px-0",
+        `relative mx-[15px] lg:mx-auto mt-[45px] lg:mt-[-20px] mb-[70px] z-[200] lg:w-[1160px] lg:px-[70px]  pt-0 flex max-md:flex-col ${
+          className
+            ? `lg:px-[80px] pb-[45px] my-[70px] ${className} `
+            : "lg:px-[70px] pb-[50px] "
+        }`
+      )}
     >
-      <div className="relative w-[433px] h-[24.5rem] flex flex-shrink-0">
+      <div className="relative w-full mx-auto lg:w-[433px] h-[340px]  lg:h-[24.5rem] flex flex-shrink-0">
         <div>
           <div
             className={clsx(
               `${
-                className && "left-[35px]"
-              } absolute overflow-hidden h-[510px] w-[400px] left-[10px] bottom-[-75px] drop-shadow-xl bg-white rounded-[8px]`
+                className ? "left-[35px]" : ""
+              } absolute overflow-hidden h-[355px] w-full lg:h-[510px] lg:w-[400px] left-[10px] bottom-[-75px] drop-shadow-xl bg-white rounded-[8px]`
             )}
           >
             <Image
+              className="max-md:object-cover"
               src={src_bg}
               placeholder={"blur"}
               blurDataURL={src_bg}
@@ -53,11 +59,12 @@ export const GamesPromotions = (props: Props) => {
             className={clsx(
               `${
                 className
-                  ? "left-[-15px] h-[620px] bottom-[-73px]"
-                  : "left-[30px] bottom-[-75px] h-[650px]"
+                  ? "left-[-15px] lg:h-[620px] bottom-[-73px]"
+                  : "left-[30px] bottom-[-75px] lg:h-[650px]"
               }`,
               "z-[1] absolute",
-              "w-[460px]",
+              "w-[277px] lg:w-[460px]",
+              "max-md:h-[406px]",
               `transition-[transform,translate] ease-[ease,ease] duration-[0.3s,0.3s] delay-[0s,0s] lg:hover:translate-y-[-9px] lg:hover:scale-[1.03]`
             )}
           >
@@ -72,11 +79,13 @@ export const GamesPromotions = (props: Props) => {
         </div>
       </div>
       <div
-        className={`${
-          className ? "mr-[90px]" : "pl-24"
-        }    pt-20 z-[250] relative`}
+        className={clsx(
+          `px-[15px] mt-[-60px] relative ${
+            className ? "mr-[90px]" : "pl-24"
+          } pt-20 z-[250]`
+        )}
       >
-        <div className="flex flex-col max-w-[450px] relative">
+        <div className="max-md:auto flex flex-col max-w-[450px] relative">
           <h2 className="font-anton text-4xl tracking-[2px] font-bold uppercase text-slate-800 mb-5">
             {name}
           </h2>
