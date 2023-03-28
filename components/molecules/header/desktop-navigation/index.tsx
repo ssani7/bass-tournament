@@ -1,16 +1,17 @@
 import clsx from "clsx";
-import { NavGroupProps } from ".";
+import { NavGroupProps } from "..";
+import { MenuItems } from "./menuitems";
 
 export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
   return (
     <nav className="hidden lg:flex grow justify-center h-full">
       <ul className={clsx("text-white", "flex items-center gap-5 h-full")}>
         {navigation.map((name) => (
-          <li
-            key={name.name}
-            className="flex items-center p-5 h-full hover:bg-neutral-700 cursor-pointer text-start"
-          >
-            {name.name}
+          <li key={name.name} className="static">
+            <button className="flex items-center p-4 h-full hover:bg-neutral-700  cursor-pointer text-start ">
+              {name.name}
+            </button>
+            <MenuItems />
           </li>
         ))}
 

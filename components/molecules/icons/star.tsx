@@ -14,8 +14,8 @@ export const Star = () => {
           y1="-33.637%"
           y2="99.077%"
         >
-          <stop offset="0%" stop-color="#FAC361"></stop>
-          <stop offset="100%" stop-color="#E76F1C"></stop>
+          <stop offset="0%" stopColor="#FAC361"></stop>
+          <stop offset="100%" stopColor="#E76F1C"></stop>
         </linearGradient>
       </defs>
       <g fill="none" fill-rule="evenodd">
