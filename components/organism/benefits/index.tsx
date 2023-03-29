@@ -1,5 +1,5 @@
-import { RewardCard } from "@/components/molecules/card/reward";
-import { reward } from "@/data/reward";
+import { RewardCard } from '@/components/molecules/card/reward';
+import { reward } from '@/data/reward';
 
 export const Benefits = () => {
   return (

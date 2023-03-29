@@ -19,12 +19,11 @@ const discover_games = [
     img: MECH_ARENA,
   },
 ];
-
-export const MenuItems = ({
-  isOpenMenuItems,
-}: {
+type TMenuitems = {
   isOpenMenuItems: boolean;
-}) => {
+};
+
+export const MenuItems = ({ isOpenMenuItems }: TMenuitems) => {
   const isOpen = isOpenMenuItems;
   return (
     <div
