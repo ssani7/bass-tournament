@@ -3,6 +3,9 @@ import {
   RAID_SHADOW_LEGENDS,
 } from "@/utils/constants/discovergames";
 import Image from "next/image";
+import Link from "next/link";
+import { Cavet } from "../../icons";
+import { MenuItemGames } from "./menuitem-games";
 
 const discover_games = [
   {
@@ -17,11 +20,20 @@ const discover_games = [
   },
 ];
 
-export const MenuItems = () => {
+export const MenuItems = ({
+  isOpenMenuItems,
+}: {
+  isOpenMenuItems: boolean;
+}) => {
+  const isOpen = isOpenMenuItems;
   return (
-    <div className="opacity-100 visible absolute left-0 top-[initial] min-w-full bg-[rgb(16,17,20)] z-[556]">
+    <div
+      className={` ${
+        isOpen ? "visible opacity-100" : "hidden opacity-0"
+      } absolute left-0 top-[initial] min-w-full bg-[rgb(16,17,20)] z-[556]`}
+    >
       <div className="flex max-w-[1440px] mx-auto px-6">
-        <div className="w-440px flex-shrink-0">
+        <div className="w-[440px] flex-shrink-0">
           <div className="relative pt-8 pb-11 pl-12 h-full border-r border-white/10">
             <div className="relative z-10 text-lg font-bold mb-3">
               Discover Games
@@ -45,8 +57,19 @@ export const MenuItems = () => {
                 </div>
               </div>
             ))}
+            <div>
+              <Link
+                href={"/"}
+                className="text-blue-400 flex items-center group text-base"
+              >
+                All Games{" "}
+                <Cavet className="text-white group-hover:translate-x-1 ease-in duration-[0.3s] delay-[0s]" />
+              </Link>
+            </div>
           </div>
         </div>
+
+        <MenuItemGames />
       </div>
     </div>
   );

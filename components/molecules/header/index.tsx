@@ -14,6 +14,7 @@ const navigation = [
   },
   {
     name: "Community",
+    
   },
   {
     name: "Resources",

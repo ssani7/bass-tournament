@@ -1,17 +1,23 @@
 import clsx from "clsx";
+import { useEffect, useRef, useState } from "react";
 import { NavGroupProps } from "..";
 import { MenuItems } from "./menuitems";
 
 export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
+  const [isOpenMenuItems, setisOpenMenuItems] = useState(false);
+
   return (
     <nav className="hidden lg:flex grow justify-center h-full">
       <ul className={clsx("text-white", "flex items-center gap-5 h-full")}>
         {navigation.map((name) => (
           <li key={name.name} className="static">
-            <button className="flex items-center p-4 h-full hover:bg-neutral-700  cursor-pointer text-start ">
+            <button
+              className="flex items-center p-4 h-full hover:bg-neutral-700  cursor-pointer text-start"
+              onClick={() => setisOpenMenuItems(!isOpenMenuItems)}
+            >
               {name.name}
             </button>
-            <MenuItems />
+            <MenuItems isOpenMenuItems={isOpenMenuItems} />
           </li>
         ))}
 
