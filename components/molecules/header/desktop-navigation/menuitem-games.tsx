@@ -1,4 +1,5 @@
 import { GENRES, MENUITEMS_GAMES } from '@/data/menuitems';
+import clsx from 'clsx';
 import Link from 'next/link';
 
 export const MenuItemGames = () => {
@@ -25,7 +26,12 @@ export const MenuItemGames = () => {
                   <Link
                      key={genre}
                      href={'/'}
-                     className="inline-flex rounded-[3px] text-sm text-center text-[rgb(147,188,255)] bg-[rgb(47,47,47)] px-[10px] mb-1 mr-[5px] hover:text-white/90"
+                     className={clsx(
+                        'inline-flex rounded-[3px]',
+                        'text-sm text-center',
+                        'text-[rgb(147,188,255)] bg-[rgb(47,47,47)]',
+                        'px-[10px] mb-1 mr-[5px] hover:text-white/90',
+                     )}
                   >
                      {genre}
                   </Link>

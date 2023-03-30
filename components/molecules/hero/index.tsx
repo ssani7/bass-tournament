@@ -1,14 +1,13 @@
 import { Button, ButtonSize, ButtonVariant } from '@/components/atom/button';
-import { Rating } from '@/components/atom/rating';
-import { Tag } from '@/components/atom/tag';
+import { Rating, Tag } from '@/components/atom';
+import clsx from 'clsx';
+import Link from 'next/link';
+import { Cavet } from '../icons';
 import {
    HERO_IMAGE_MOB,
    HERO_IMAGE_PC,
    HERO_IMAGE_TAB,
 } from '@/utils/constants';
-import clsx from 'clsx';
-import Link from 'next/link';
-import { Cavet } from '../icons';
 
 export const Hero = () => {
    return (
@@ -26,7 +25,14 @@ export const Hero = () => {
             'max-md:after:bottom-0',
          )}
       >
-         <div className="max-sm:self-end max-sm:bg-transparent mx-auto max-md:px-4 max-md:py-5 max-md:-mt-16 md:pt-[75px] md:pl-12 lg:w-[1000px] lg:pl-[10px] lg:pt-[100px]">
+         <div
+            className={clsx(
+               'max-sm:self-end max-sm:bg-transparent',
+               'mx-auto max-md:px-4 max-md:py-5',
+               'max-md:-mt-16 md:pt-[75px] md:pl-12',
+               'lg:w-[1000px] lg:pl-[10px] lg:pt-[100px]',
+            )}
+         >
             <div className="z-10 relative flex flex-col md:gap-2 lg:gap-3">
                <h1 className="mb-3 md:text-[32px] lg:text-5xl font-anton uppercase text-white tracking-wider">
                   RAID: SHADOW <br /> LEGENDS

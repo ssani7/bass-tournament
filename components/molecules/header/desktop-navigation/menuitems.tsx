@@ -2,10 +2,13 @@ import {
    MECH_ARENA,
    RAID_SHADOW_LEGENDS,
 } from '@/utils/constants/discovergames';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Cavet } from '../../icons';
+import { MenuItemCommunity } from './menuitem-community';
 import { MenuItemGames } from './menuitem-games';
+import { MenuItemResources } from './menuitem-resources';
 
 const discover_games = [
    {
@@ -22,9 +25,10 @@ const discover_games = [
 
 type TMenuitems = {
    isOpenMenuItems: boolean;
+   menu: string;
 };
 
-export const MenuItems = ({ isOpenMenuItems }: TMenuitems) => {
+export const MenuItems = ({ isOpenMenuItems, menu }: TMenuitems) => {
    const isOpen = isOpenMenuItems;
    return (
       <div
@@ -76,7 +80,9 @@ export const MenuItems = ({ isOpenMenuItems }: TMenuitems) => {
                </div>
             </div>
 
-            <MenuItemGames />
+            {menu === 'Games' && <MenuItemGames />}
+            {menu === 'Community' && <MenuItemCommunity />}
+            {menu === 'Resources' && <MenuItemResources />}
          </div>
       </div>
    );
