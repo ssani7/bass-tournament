@@ -8,27 +8,25 @@ export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
    const [selectedMenu, setSelectedMenu] = useState('Games');
 
    const selectMenuFn = (menu: string) => () => {
-      console.log('menu->', menu);
-      console.log('selectedMenu->', selectedMenu);
-      console.log('isOpenMenu->', isOpenMenuItems);
-
       if (menu === selectedMenu && isOpenMenuItems === true) {
          setisOpenMenuItems(!isOpenMenuItems);
       } else {
          setisOpenMenuItems(true);
       }
-
       setSelectedMenu(menu);
    };
 
    return (
       <nav className="hidden lg:flex grow justify-center h-full">
-         <ul className={clsx('text-white', 'flex items-center gap-5 h-full')}>
+         <ul
+            className={clsx('text-white', 'flex items-center gap-5 h-full')}
+            onMouseLeave={() => setisOpenMenuItems(false)}
+         >
             {navigation.map(({ name }) => (
                <li key={name} className="static">
                   <button
                      className="flex items-center p-4 h-full hover:bg-neutral-700  cursor-pointer text-start"
-                     onClick={selectMenuFn(name)}
+                     onMouseOver={selectMenuFn(name)}
                   >
                      {name}
                   </button>
