@@ -2,38 +2,48 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import { NavGroupProps } from '..';
 import { MenuItems } from './menuitems';
+import Link from 'next/link';
+import { MenuItemGames } from './menuitem-games';
+import { MenuItemCommunity } from './menuitem-community';
+import { MenuItemResources } from './menuitem-resources';
+
+const MENUS = {
+   Games: 'Games',
+   Community: 'Community',
+   Resources: 'Resources',
+};
 
 export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
-   const [isOpenMenuItems, setisOpenMenuItems] = useState(false);
-   const [selectedMenu, setSelectedMenu] = useState('Games');
+   const [isOpenMenuItems, setIsOpenMenuItems] = useState(false);
+   const [menu, setSelectedMenu] = useState(MENUS.Games);
 
-   const selectMenuFn = (menu: string) => () => {
-      if (menu === selectedMenu && isOpenMenuItems === true) {
-         setisOpenMenuItems(!isOpenMenuItems);
-      } else {
-         setisOpenMenuItems(true);
-      }
+   const shownMenu = (menu: string) => {
       setSelectedMenu(menu);
+      setIsOpenMenuItems(true);
    };
 
    return (
       <nav className="hidden lg:flex grow justify-center h-full">
-         <ul
-            className={clsx('text-white', 'flex items-center gap-5 h-full')}
-            onMouseLeave={() => setisOpenMenuItems(false)}
-         >
+         <ul className={clsx('text-white', 'flex items-center gap-5 h-full')}>
             {navigation.map(({ name }) => (
                <li key={name} className="static">
-                  <button
-                     className="flex items-center p-4 h-full hover:bg-neutral-700  cursor-pointer text-start"
-                     onMouseOver={selectMenuFn(name)}
+                  <Link
+                     href={'/'}
+                     className="hover:bg-neutral-700 flex items-center text-left text-[rgb(145,145,145)] relative bg-transparent h-[calc(54px)] w-full font-bold"
+                     onMouseOver={() => shownMenu(name)}
                   >
-                     {name}
-                  </button>
+                     <span className="px-4 flex items-center w-full relative   cursor-pointer text-start">
+                        <span className="text-[rgb(234,234,234)]">{name}</span>
+                     </span>
+                  </Link>
                   <MenuItems
                      isOpenMenuItems={isOpenMenuItems}
-                     menu={selectedMenu}
-                  />
+                     onMouseLeave={() => setIsOpenMenuItems(false)}
+                  >
+                     {menu === MENUS.Community && <MenuItemCommunity />}
+                     {menu === MENUS.Games && <MenuItemGames />}
+                     {menu === MENUS.Resources && <MenuItemResources />}
+                  </MenuItems>
                </li>
             ))}
 

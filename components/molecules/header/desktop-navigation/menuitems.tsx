@@ -9,6 +9,7 @@ import { Cavet } from '../../icons';
 import { MenuItemCommunity } from './menuitem-community';
 import { MenuItemGames } from './menuitem-games';
 import { MenuItemResources } from './menuitem-resources';
+import React, { MouseEventHandler } from 'react';
 
 const discover_games = [
    {
@@ -25,15 +26,21 @@ const discover_games = [
 
 type TMenuitems = {
    isOpenMenuItems: boolean;
-   menu: string;
+   children: React.ReactNode;
+   onMouseLeave: MouseEventHandler<HTMLDivElement>;
 };
 
-export const MenuItems = ({ isOpenMenuItems, menu }: TMenuitems) => {
+export const MenuItems = ({
+   isOpenMenuItems,
+   children,
+   onMouseLeave,
+}: TMenuitems) => {
    const isOpen = isOpenMenuItems;
    return (
       <div
-         className={` ${
-            isOpen ? 'visible opacity-100' : 'hidden opacity-0'
+         onMouseLeave={onMouseLeave}
+         className={`${
+            isOpen ? 'visible opacity-100' : 'invisible opacity-0'
          } absolute left-0 top-[initial] min-w-full bg-[rgb(16,17,20)] z-[556]`}
       >
          <div className="flex max-w-[1440px] mx-auto px-6">
@@ -79,10 +86,7 @@ export const MenuItems = ({ isOpenMenuItems, menu }: TMenuitems) => {
                   </div>
                </div>
             </div>
-
-            {menu === 'Games' && <MenuItemGames />}
-            {menu === 'Community' && <MenuItemCommunity />}
-            {menu === 'Resources' && <MenuItemResources />}
+            {children}
          </div>
       </div>
    );
