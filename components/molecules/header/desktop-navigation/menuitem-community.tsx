@@ -38,7 +38,7 @@ export const MenuItemCommunity = () => {
                   'block relative mx-6 w-20',
                   'text-[rgb(210,210,210)] transition-[opacity,color]',
                   'ease-[ease,ease] duration-[0.3s,0.3s] delay-[0s,0s]',
-                  'group-hover:text-[#fcfcfc]',
+                  'hover:text-[#fcfcfc]',
                   'group-hover:opacity-[0.6] hover:!opacity-100',
                )}
             >
