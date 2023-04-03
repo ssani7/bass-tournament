@@ -29,10 +29,16 @@ export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
                <li key={name} className="static">
                   <Link
                      href={'/'}
-                     className="hover:bg-neutral-700 flex items-center text-left text-[rgb(145,145,145)] relative bg-transparent h-[calc(54px)] w-full font-bold"
+                     className={clsx(
+                        'hover:bg-neutral-700',
+                        'flex items-center text-left',
+                        'text-[rgb(145,145,145)] relative',
+                        'bg-transparent h-[calc(54px)] w-full font-bold',
+                        'transition-[background-color] duration-[0.3s] delay-[0s] ease-[ease]',
+                     )}
                      onMouseOver={() => shownMenu(name)}
                   >
-                     <span className="px-4 flex items-center w-full relative   cursor-pointer text-start">
+                     <span className="px-4 flex items-center w-full relative cursor-pointer text-start">
                         <span className="text-[rgb(234,234,234)]">{name}</span>
                      </span>
                   </Link>
@@ -49,10 +55,10 @@ export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
 
             <li
                className={clsx(
-                  'cursor-pointer flex items-center ',
-                  'from-[rgb(71,121,203)99%] to-[rgb(91,143,229)] ',
+                  'cursor-pointer flex items-center',
+                  'from-[rgb(71,121,203)99%] to-[rgb(91,143,229)]',
                   'rounded-md px-[15px] font-bold text-center h-[35px]',
-                  'bg-gradient-to-t hover:from-[rgb(97,156,255)] hover:to-[rgb(85,140,230)] ',
+                  'bg-gradient-to-t hover:from-[rgb(97,156,255)] hover:to-[rgb(85,140,230)]',
                )}
             >
                Get Plarium Play
