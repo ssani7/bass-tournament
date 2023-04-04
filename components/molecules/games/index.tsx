@@ -33,10 +33,10 @@ export const AllGames = () => {
                         },
                         // when window width is >= 480px
                         480: {
-                           slidesPerView: 6,
+                           slidesPerView: 5,
                         },
                         // when window width is >= 640px
-                        640: {
+                        768: {
                            slidesPerView: 11,
                         },
                      }}
@@ -47,11 +47,10 @@ export const AllGames = () => {
                         disableOnInteraction: false,
                      }}
                      speed={50000}
-                     spaceBetween={1}
                      modules={[Autoplay]}
                   >
                      {Games2.map(({ src }) => (
-                        <SwiperSlide key={src}>
+                        <SwiperSlide key={src} className="mr-5">
                            <div className="relative h-[95px] w-[95px] rounded-[15px] overflow-hidden mr-[5px] flex-shrink-0 pointer-events-none">
                               <Image src={src} fill alt="games" />
                            </div>
@@ -61,13 +60,26 @@ export const AllGames = () => {
                </div>
                <div className="ml-[-95px]">
                   <Swiper
+                     breakpoints={{
+                        // when window width is >= 320px
+                        320: {
+                           slidesPerView: 4,
+                        },
+                        // when window width is >= 480px
+                        480: {
+                           slidesPerView: 5,
+                        },
+                        // when window width is >= 640px
+                        768: {
+                           slidesPerView: 11,
+                        },
+                     }}
                      loop
                      autoplay={{
                         delay: 100,
                         disableOnInteraction: false,
                      }}
                      speed={10000}
-                     slidesPerView={11}
                      modules={[Autoplay]}
                   >
                      {Games.map(({ src }) => (
