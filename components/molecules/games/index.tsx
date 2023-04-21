@@ -29,11 +29,11 @@ export const AllGames = () => {
                      breakpoints={{
                         // when window width is >= 320px
                         320: {
-                           slidesPerView: 4,
+                           slidesPerView: 6,
                         },
                         // when window width is >= 480px
                         480: {
-                           slidesPerView: 5,
+                           slidesPerView: 6,
                         },
                         // when window width is >= 640px
                         768: {
@@ -49,8 +49,8 @@ export const AllGames = () => {
                      speed={50000}
                      modules={[Autoplay]}
                   >
-                     {Games2.map(({ src }) => (
-                        <SwiperSlide key={src} className="mr-5">
+                     {Games2.map(({ src }, i) => (
+                        <SwiperSlide key={i} className="mr-5">
                            <div className="relative h-[95px] w-[95px] rounded-[15px] overflow-hidden mr-[5px] flex-shrink-0 pointer-events-none">
                               <Image src={src} fill alt="games" />
                            </div>
@@ -63,11 +63,11 @@ export const AllGames = () => {
                      breakpoints={{
                         // when window width is >= 320px
                         320: {
-                           slidesPerView: 4,
+                           slidesPerView: 6,
                         },
                         // when window width is >= 480px
                         480: {
-                           slidesPerView: 5,
+                           slidesPerView: 6,
                         },
                         // when window width is >= 640px
                         768: {
@@ -82,8 +82,8 @@ export const AllGames = () => {
                      speed={10000}
                      modules={[Autoplay]}
                   >
-                     {Games.map(({ src }) => (
-                        <SwiperSlide key={src} className={'mr-5'}>
+                     {Games.map(({ src }, i) => (
+                        <SwiperSlide key={i} className={'mr-5'}>
                            <div className="relative h-[95px] w-[95px]  rounded-[15px] overflow-hidden flex-shrink-0 pointer-events-none">
                               <Image src={src} fill alt="games" />
                            </div>

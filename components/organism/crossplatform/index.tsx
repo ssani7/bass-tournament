@@ -13,7 +13,7 @@ export const CrossPlatformSection = () => {
             }
          >
             <div className="flex flex-col-reverse lg:flex-row md:w-full lg:w-[1140px]">
-               <div className="relative md:mx-8 md:h-[360px] md:w-[585px] lg: w-3/5 flex flex-shrink-0 justify-center items-center">
+               <div className="relative h-[230px] w-full md:mx-8 md:h-[360px] md:w-[585px] lg:w-3/5 flex flex-shrink-0 justify-center items-center">
                   <Image
                      className="object-contain"
                      placeholder={'blur'}

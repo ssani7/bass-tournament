@@ -7,7 +7,7 @@ type BlogCardProps = {
 
 export const BlogCard = ({ src, name }: BlogCardProps) => {
    return (
-      <div className="bg-white h-[340px] w-96 rounded-md shadow-md relative mr-6">
+      <div className="bg-white h-[340px] w-full md:w-96 rounded-md shadow-md relative mr-6">
          <div className="relative pt-[55.556%] mb-4 overflow-hidden will-change-transform">
             <div className="absolute top-2/4 left-2/4 block h-full w-full max-w-none translate-x-[-50%] translate-y-[-50%]">
                <Image className="object-cover" src={src} alt={name} fill />
