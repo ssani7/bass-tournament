@@ -27,7 +27,7 @@ export const Blog = () => {
                   </div>
                </div>
             </div>
-            <div className="flex flex-col md:flex-row gap-5">
+            <div className="flex flex-col md:flex-row gap-5 mx-5">
                {Blog.map((blog) => (
                   <BlogCard key={blog.name} {...blog} />
                ))}
