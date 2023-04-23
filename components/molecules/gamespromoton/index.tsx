@@ -28,15 +28,15 @@ export const GamesPromotions = (props: TGamesPromProps) => {
          containerClassName={clsx(
             'w-[calc(100%-30px)]',
             'max-md:bg-[rgb(55,64,84)]',
-            'px-0',
-            `relative mx-[15px] lg:mx-auto mt-[45px] lg:mt-[-20px] mb-[70px] z-[200] lg:w-[1160px] lg:px-[70px] pt-0 flex flex-col md:flex-row ${
+            'px-0 md:px-[20px]',
+            `relative mx-[15px] lg:mx-auto mt-[45px] lg:mt-[-20px] mb-[70px] z-[200] lg:w-[1160px] lg:px-[70px] pt-0 flex flex-col ${
                className
                   ? `lg:px-[80px] pb-[45px] my-[70px] md:flex-row-reverse ${className}`
-                  : 'lg:px-[70px] pb-[50px]'
+                  : 'lg:px-[70px] pb-[50px] md:flex-row'
             }`,
          )}
       >
-         <div className="relative w-full mx-auto lg:w-[433px] h-[340px] lg:h-[24.5rem] flex flex-shrink-0">
+         <div className="relative w-full mx-auto md:w-[320px] lg:w-[433px] h-[340px] lg:h-[24.5rem] flex">
             <div>
                <div
                   className={clsx(
@@ -85,11 +85,11 @@ export const GamesPromotions = (props: TGamesPromProps) => {
                } pt-20 z-[250]`,
             )}
          >
-            <div className="flex flex-col w-full md:max-w-[450px] relative">
-               <h2 className="font-anton text-4xl tracking-[2px] font-bold uppercase text-white  md:text-slate-800 mb-5">
+            <div className="flex flex-col w-full mx-auto  md:max-w-[315px] max-w-[475px] lg:max-w-[475px] relative">
+               <h2 className="font-anton text-2xl md:text-[32px] lg:text-4xl tracking-[2px] font-bold uppercase text-white  md:text-slate-800 mb-5">
                   {name}
                </h2>
-               <div className="hidden md:flex">
+               <div className="hidden lg:flex">
                   <div className="mr-3">
                      <div className="flex flex-col ">
                         <span className="text-xs text-white md:text-zinc-500 font-semibold text-center">
@@ -111,10 +111,10 @@ export const GamesPromotions = (props: TGamesPromProps) => {
                      ))}
                   </div>
                </div>
-               <div className="text-white md:text-gray-500 mt-15px text-[18px] mb-[20px]">
+               <div className="text-white md:text-gray-500 mt-15px text-base lg:text-[18px] mb-[20px]">
                   {description}
                </div>
-               <div className="flex bg-white/80 max-md:rounded-lg max-md:p-[10px]">
+               <div className="flex bg-white/80 max-md:rounded-lg p-[10px]">
                   <Button
                      containerClassName="hidden lg:block"
                      variant={ButtonVariant.PRIMARY}
@@ -123,7 +123,7 @@ export const GamesPromotions = (props: TGamesPromProps) => {
                      Download
                   </Button>
                   <Link
-                     className="text-[rgb(31,124,223)] max-md:items-center max-md:flex w-full max-md:justify-center  group ml-5 font-semibold items-center inline-flex"
+                     className="text-[rgb(31,124,223)] p-2 max-md:items-center max-md:flex w-full max-md:justify-center  group ml-5 font-semibold items-center inline-flex"
                      href={'/'}
                   >
                      Learn More
