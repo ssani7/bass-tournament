@@ -12,7 +12,7 @@ const anton = Anton({
 });
 export default function App({ Component, pageProps }: AppProps) {
    return (
-      <main className={`${inter.variable} font-sans ${anton.variable}`}>
+      <main className={`${inter.variable} ${anton.variable} font-sans`}>
          <Component {...pageProps} />
       </main>
    );

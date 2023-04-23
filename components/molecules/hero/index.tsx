@@ -66,7 +66,7 @@ export const Hero = () => {
                </div>
                <div className="flex max-md:bg-white/80 max-md:rounded-lg max-md:p-[10px]">
                   <Button
-                     containerClassName="hidden md:block lg:block shadow-xl md:min-h-[50px] h-5 font-semibold text-5"
+                     containerClassName="hidden md:block shadow-xl md:min-h-[50px] h-5 font-semibold text-5"
                      size={ButtonSize.EXTRA_LARGE}
                      variant={ButtonVariant.PRIMARY}
                   >
