@@ -31,18 +31,18 @@ export const GamesPromotions = (props: TGamesPromProps) => {
             'px-0 md:px-[20px]',
             `relative mx-[15px] lg:mx-auto mt-[45px] lg:mt-[-20px] mb-[70px] z-[200] lg:w-[1160px] lg:px-[70px] pt-0 flex flex-col ${
                className
-                  ? `lg:px-[80px] pb-[45px] my-[70px] md:flex-row-reverse ${className}`
-                  : 'lg:px-[70px] pb-[50px] md:flex-row'
+                  ? `lg:px-[80px] md:pb-[45px] my-[70px] md:flex-row-reverse ${className}`
+                  : 'lg:px-[70px] md:pb-[50px] md:flex-row'
             }`,
          )}
       >
-         <div className="relative w-full mx-auto md:w-[320px] lg:w-[433px] h-[340px] lg:h-[24.5rem] flex">
+         <div className="relative h-[340px] w-full mx-auto md:w-[320px] lg:w-[433px]  lg:h-[24.5rem] flex">
             <div>
                <div
                   className={clsx(
                      `${
                         className && 'md:left-[35px]'
-                     } absolute overflow-hidden w-full  h-[355px] md:h-[350px] md:w-[285px] lg:h-[510px] lg:w-[400px] md:left-[10px] bottom-[-75px] drop-shadow-xl bg-white rounded-[8px]`,
+                     } absolute overflow-hidden w-full bottom-[10px] h-[355px] md:bottom-[-75px] md:h-[350px] md:w-[285px] lg:h-[510px] lg:w-[400px] md:left-[10px]  drop-shadow-xl bg-white rounded-[8px]`,
                   )}
                >
                   <Image
@@ -57,12 +57,8 @@ export const GamesPromotions = (props: TGamesPromProps) => {
 
                <div
                   className={clsx(
-                     `${
-                        className
-                           ? 'left-[-15px] md:h-[620px] bottom-[-73px]'
-                           : 'left-[30px] bottom-[-75px] md:h-[650px]'
-                     }`,
-                     'z-[1] absolute',
+                     `${className ? 'md:bottom-[-73px]' : 'md:bottom-[-75px]'}`,
+                     'z-[1] absolute left-[50%] translate-x-[-50%] bottom-[10px]',
                      'w-[277px] md:h-[470px] lg:w-[460px]',
                      'h-[406px] md:w-[320px] lg:h-[620px]',
                      `transition-[transform,translate] ease-[ease,ease] duration-[0.3s,0.3s] delay-[0s,0s] lg:hover:translate-y-[-9px] lg:hover:scale-[1.03]`,
@@ -82,10 +78,17 @@ export const GamesPromotions = (props: TGamesPromProps) => {
             className={clsx(
                `px-[15px] mt-[-60px] relative ${
                   className ? 'md:mr-[90px]' : 'md:pl-24'
-               } pt-20 z-[250]`,
+               } px-[15px] pb-[20px]  md:pt-20 z-[250]`,
+               'max-md:after:absolute max-md:after:left-0 max-md:after:right-0 max-md:after:bottom-0 max-md:after:overflow-hidden',
+               'max-md:after:bg-[rgb(29,46,73,0.4)]',
+               "max-md:after:content[''] max-md:after:rounded-b-lg",
+               'max-md:after:h-[calc(100%+20px)]',
+               'max-md:after:absolute max-sm:after:w-full',
+               'max-md:after:backdrop-saturate-[1%]',
+               'max-md:after:backdrop-blur-[20px]',
             )}
          >
-            <div className="flex flex-col w-full mx-auto  md:max-w-[315px] max-w-[475px] lg:max-w-[475px] relative">
+            <div className="z-50 flex flex-col w-full mx-auto  md:max-w-[315px] max-w-[475px] lg:max-w-[475px] relative">
                <h2 className="font-anton text-2xl md:text-[32px] lg:text-4xl tracking-[2px] font-bold uppercase text-white  md:text-slate-800 mb-5">
                   {name}
                </h2>

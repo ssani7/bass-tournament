@@ -11,7 +11,7 @@ export const AllGames = () => {
          containerClassName={`relative mx-auto mt-[-20px] mb-[70px] z-[200] pt-0 flex "px-[70px] pb-[50px] w-[calc(100%-30px)] lg:w-[1160px]`}
       >
          <div className="flex flex-col items-center justify-center h-full w-full py-16">
-            <h2 className="text-4xl text-center font-extrabold pb-3">
+            <h2 className=" text-3xl md:text-4xl text-center font-extrabold pb-3">
                CHECK OUT ALL OUR GAMES
             </h2>
             <div className="max-w-[500px] text-[rgb(58,58,58)] text-center text-lg mx-auto mb-3">
