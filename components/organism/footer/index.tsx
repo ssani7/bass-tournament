@@ -87,7 +87,7 @@ export const Footer = () => {
                         {footer.map(({ name }) => (
                            <li
                               key={name}
-                              className="px-4 pb-1 lg:first:border-0 lg:border-l border-solid border-l-[rgb(79,77,77)] "
+                              className="leading-8 px-4 pb-1 lg:first:border-0 lg:border-l border-solid border-l-[rgb(79,77,77)] "
                            >
                               <Link
                                  href={'/'}
