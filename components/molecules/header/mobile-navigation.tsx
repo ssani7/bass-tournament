@@ -133,7 +133,7 @@ export const MobileNav = () => {
                </Tab.Group>
 
                <div className="h-[756px] w-screen flex-shrink-0">
-                  <div className="mb-9 ml-4 mt-10">
+                  <div className="mb-9 ml-[15px] mt-10">
                      <button
                         className="flex bg-transparent text-white/70 text-l items-center"
                         onClick={() =>

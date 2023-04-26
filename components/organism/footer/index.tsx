@@ -5,11 +5,9 @@ import clsx from 'clsx';
 import Link from 'next/link';
 
 export const Footer = () => {
-   const lorem =
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
    return (
       <footer className="bg-[#191b1f] text-white pt-7 relative">
-         <div className="w-full lg:max-w-[1440px] px-8 lg:px-[70px] mb-16 mx-auto">
+         <div className="w-full px-8  mb-16 mx-auto lg:max-w-[1440px] lg:px-[70px]">
             <div className="flex flex-col lg:flex-row">
                <div className="mr-24 w-80 mb-8">
                   <div>
@@ -79,7 +77,7 @@ export const Footer = () => {
                </div>
             </div>
          </div>
-         <div className="h-full lg:h-16 bg-transparent lg:bg-black">
+         <div className="h-full bg-transparent lg:bg-black">
             <div>
                <div className="flex lg:max-w-[1140px] px-8 py-8  mx-auto lg:py-4 justify-center">
                   <div className="overflow-hidden">
