@@ -11,7 +11,7 @@ export const Modal = ({ isOpen = false, onClose, children }: ModalProps) => {
    return (
       <Dialog
          open={isOpen}
-         className="fixed inset-0 z-[1000] flex items-center justify-center overflow-y-auto lg:hidden"
+         className="fixed inset-0 z-[5001] flex items-center justify-center overflow-y-auto lg:hidden"
          onClose={() => onClose(isOpen)}
       >
          <div className="fixed inset-0 flex items-center justify-center">
