@@ -1,17 +1,7 @@
 import Link from 'next/link';
 import { NickNameGenerator } from '../../icons';
+import { MENUITEMS_RESOURCES } from '@/data/menuitems';
 
-const generators = [
-   'Nickname Generator',
-   'Fantasy Name Generator',
-   'Elf Name Generator',
-   'Gamertag Generator',
-   'DND Name Generator',
-   'Game Name Generator',
-   'Clan Name Generator',
-   'Superhero Name Generator',
-   'RPG Name Generator',
-];
 export const MenuItemResources = () => {
    return (
       <>
@@ -22,7 +12,7 @@ export const MenuItemResources = () => {
                   Name Generators
                </h2>
                <div className="columns-2 column">
-                  {generators.map((name) => (
+                  {MENUITEMS_RESOURCES.map((name) => (
                      <Link
                         key={name}
                         href={'/'}

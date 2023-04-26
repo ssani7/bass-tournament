@@ -1,36 +1,12 @@
-import {
-   BLOG_ICON,
-   FORUM_ICON,
-   NEWS_ICON,
-   SUPPORT_ICON,
-} from '@/utils/constants/community_image_menuitem';
+import { MENUITEMS_COMMUNITY } from '@/data/menuitems';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const community_menuitems = [
-   {
-      name: 'Forum',
-      icon: FORUM_ICON,
-   },
-   {
-      name: 'News',
-      icon: NEWS_ICON,
-   },
-   {
-      name: 'Blog',
-      icon: BLOG_ICON,
-   },
-   {
-      name: 'Support',
-      icon: SUPPORT_ICON,
-   },
-];
-
 export const MenuItemCommunity = () => {
    return (
       <div className="inline-flex mt-16 ml-6 group">
-         {community_menuitems.map(({ name, icon }) => (
+         {MENUITEMS_COMMUNITY.map(({ name, icon }) => (
             <Link
                key={name}
                href={'/'}
