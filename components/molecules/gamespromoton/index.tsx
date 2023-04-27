@@ -36,12 +36,12 @@ export const GamesPromotions = (props: TGamesPromProps) => {
             }`,
          )}
       >
-         <div className="relative h-[340px] w-full mx-auto flex flex-shrink-0 md:w-[320px] lg:w-[433px] lg:h-[24.5rem] ">
+         <div className="relative h-[340px] w-full mx-auto flex flex-shrink-0 md:w-[320px] lg:w-[433px] lg:h-[24.5rem]">
             <div
                className={clsx(
                   `${
                      className && 'md:left-[35px]'
-                  } absolute overflow-hidden w-full bottom-[10px] h-[355px]  drop-shadow-xl bg-white rounded-[8px] md:left-[10px] md:bottom-[-75px] md:h-[350px] md:w-[285px] lg:h-[510px] lg:w-[400px]  `,
+                  } absolute overflow-hidden w-full bottom-[10px] h-[355px]  drop-shadow-xl bg-white rounded-[8px] md:left-[10px] md:bottom-[-75px] md:h-[350px] md:w-[285px] lg:h-[510px] lg:w-[400px]`,
                )}
             >
                <Image
@@ -58,8 +58,8 @@ export const GamesPromotions = (props: TGamesPromProps) => {
                className={clsx(
                   `${className ? 'md:bottom-[-73px]' : 'md:bottom-[-75px]'}`,
                   'z-[1] absolute left-[50%] translate-x-[-50%] bottom-[10px]',
-                  'w-[277px] md:h-[470px] lg:w-[460px]',
-                  'h-[406px] md:w-[320px] lg:h-[620px]',
+                  'w-[277px] md:h-[470px] lg:w-[460px] ',
+                  'h-[406px] md:w-[320px] lg:h-[650px]',
                   `transition-[transform,translate] ease-[ease,ease] duration-[0.3s,0.3s] delay-[0s,0s] lg:hover:translate-y-[-9px] lg:hover:scale-[1.03]`,
                )}
             >
