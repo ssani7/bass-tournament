@@ -10,6 +10,9 @@ const anton = Anton({
    subsets: ['latin'],
    variable: '--font-anton',
 });
+
+console.log(inter);
+console.log(anton);
 export default function App({ Component, pageProps }: AppProps) {
    return (
       <main className={`${inter.variable} ${anton.variable} font-sans`}>

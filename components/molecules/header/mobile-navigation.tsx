@@ -9,6 +9,9 @@ import {
    MENUITEMS_RESOURCES,
 } from '@/data/menuitems';
 import Link from 'next/link';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const MobileNav = () => {
    const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +21,7 @@ export const MobileNav = () => {
    });
 
    return (
-      <div className="flex justify-end w-full lg:hidden">
+      <div className={`flex justify-end w-full lg:hidden `}>
          <button className="z-[5002]" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
                <XMarkIcon className="h-7 w-7 text-white" />
@@ -29,6 +32,8 @@ export const MobileNav = () => {
          <Modal isOpen={isOpen} onClose={setIsOpen}>
             <div
                className={`flex w-screen flex-shrink-0 transition-transform duration-[0.3s] ease-linear ${
+                  inter.className
+               } ${
                   isSelectGameMenu.selected
                      ? 'translate-x-[-100vw]'
                      : 'translate-x-[0px]'
