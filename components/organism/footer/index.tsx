@@ -1,49 +1,72 @@
 import { Search } from '@/components/molecules';
 import { Accordion } from '@/components/molecules/accordion';
 import { categores, footer } from '@/data/footer';
+import { LANGUAGES } from '@/data/language';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export const Footer = () => {
+   const [visible, setVisible] = useState(false);
+
    return (
       <footer className="bg-[#191b1f] text-white pt-7 relative">
          <div className="w-full px-8  mb-16 mx-auto lg:max-w-[1440px] lg:px-[70px]">
             <div className="flex flex-col lg:flex-row">
-               <div className="mr-24 w-80 mb-8">
-                  <div>
-                     <div className="mb-5">
+               <div className="mr-24 w-full lg:w-80 mb-8">
+                  <div className="w-full">
+                     <div className="mb-5 w-full">
                         <div className="text-lg font-semibold text-white/70 tracking-[0.45px]">
                            PLARIUM
                         </div>
-                        <div className="text-4xl font-bold mb-3">
+                        <div className="text-[30px] lg:text-4xl font-bold mb-3">
                            TAKE THE WORLD
                         </div>
                         <div className="text-base text-white/30">
                            © 2010-2023 Plarium
                         </div>
                      </div>
-                     <div className="flex">
+                     <div className="flex w-full">
                         <Link
                            href={'/'}
                            className="hidden lg:block h-10 w-10 bg-[#2f2f33] mr-3 p-[10px] rounded-md"
                         >
                            <Search />
                         </Link>
-                        <div className="h-10 w-full relative rounded-md bg-[#2f2f33] select-none max-w-[250px]">
+                        <div className="h-10 w-full relative rounded-md bg-[#2f2f33] select-none lg:max-w-[250px]">
                            <button
+                              onClick={() => setVisible(!visible)}
                               className={clsx(
                                  'h-10 w-full text-lg',
                                  'font-medium pl-4',
                                  'cursor-pointer text-left',
                                  'after:block after:absolute after:top-[17px]',
                                  "after:right-[15px] after:content-['']",
-                                 'after:border-solid after:border-x-[6px] after:border-t-[7px]',
-                                 'after:border-t-white/25',
-                                 'after:border-x-transparent',
-                                 'after:border-b-transparent',
+                                 `${
+                                    visible
+                                       ? 'after:border-t-transparent after:border-r-transparent after:border-b-white/40 after:border-l-transparent after:border-x-[6px] after:border-b-[7px]'
+                                       : 'after:border-solid after:border-x-[6px] after:border-t-[7px] after:border-t-white/25 after:border-x-transparent after:border-b-transparent'
+                                 }`,
                               )}
                            >
                               <span>English</span>
+                              <div
+                                 className={`bg-[#2f2f33] absolute ${
+                                    visible
+                                       ? 'visible opacity-100'
+                                       : 'opacity-0 invisible'
+                                 } w-full bottom-[45px] right-0 rounded transition-[visibility,opacity] duration-[0.3s,0.3s] delay-[0s]`}
+                              >
+                                 {LANGUAGES.map((lang) => (
+                                    <Link
+                                       className="text-lg bg-transparent flex items-center text-white/60 font-medium px-[10px] leading-[40px] hover:text-white"
+                                       key={lang}
+                                       href={lang}
+                                    >
+                                       {lang}
+                                    </Link>
+                                 ))}
+                              </div>
                            </button>
                         </div>
                      </div>

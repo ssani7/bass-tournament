@@ -36,10 +36,11 @@ export default function Home() {
                      return <GamesPromotions key={data.name} {...data} />;
                   })}
                   <AllGames />
-                  <Benefits />
-                  <CrossPlatformSection />
-                  <Blog />
                </div>
+               <Benefits />
+               <CrossPlatformSection />
+               <Blog />
+
                <Footer />
             </div>
          </div>
