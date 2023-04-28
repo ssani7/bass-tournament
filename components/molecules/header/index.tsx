@@ -5,6 +5,10 @@ import { DesktopNav } from './desktop-navigation';
 import { MobileNav } from './mobile-navigation';
 import { LANGUAGES } from '@/data/language';
 import { useState } from 'react';
+import { Modal } from '../modal';
+import { Dialog } from '@headlessui/react';
+import { XCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Button, ButtonVariant } from '@/components/atom';
 
 export type NavGroupProps = {
    name: string;
@@ -24,6 +28,7 @@ const navigation = [
 
 export const Header = () => {
    const [langSwitcher, setLangSwitcher] = useState(false);
+   const [isOpenLoginModal, setLoginModal] = useState(false);
    return (
       <header
          className={clsx(
@@ -42,7 +47,7 @@ export const Header = () => {
             </Link>
             <DesktopNav navigation={navigation} />
             <MobileNav />
-            <div className="mr-5 relative">
+            <div className="mr-5 relative hidden lg:block">
                <button onClick={() => setLangSwitcher(!langSwitcher)}>
                   <span className="uppercase text-white text-xs">EN</span>
                </button>
@@ -69,11 +74,71 @@ export const Header = () => {
             </div>
 
             <div className="hidden lg:block pl-2 flex-none">
-               <button className="rounded-md px-[17px] text-sm font-bold h-8 text-blue-400 bg-white">
+               <button
+                  className="rounded-md px-[17px] text-sm font-bold h-8 text-blue-400 bg-white"
+                  onClick={() => setLoginModal(!isOpenLoginModal)}
+               >
                   Log In
                </button>
             </div>
          </div>
+         <Modal
+            isOpen={isOpenLoginModal}
+            onClose={setLoginModal}
+            className="rounded bg-[rgb(43,44,48)] lg:w-[500px] lg:drop-shadow-2xl relative p-0"
+         >
+            <button
+               className="absolute top-[10px] right-[10px]"
+               onClick={() => setLoginModal(!isOpenLoginModal)}
+            >
+               <XMarkIcon className="p-1 h-7 w-7  text-white bg-black/30 rounded-full" />
+            </button>
+            <div className="px-[45px] pt-[45px] pb-[38px] min-h-[480px]">
+               <div>
+                  <Dialog.Title
+                     className={
+                        ' text-white text-3xl font-semibold leading-9 text-center mb-[10px]'
+                     }
+                  >
+                     Great to see you again!
+                  </Dialog.Title>
+                  <Dialog.Description
+                     className={
+                        'text-lg mb-[35px] font-normal leading-5 text-center text-white/70'
+                     }
+                  >
+                     Login into your Plaruim account
+                  </Dialog.Description>
+               </div>
+               <div>
+                  <input
+                     className="h-[50px] px-5 rounded-md w-full font-semibold leading-5 relative outline-0"
+                     placeholder="Enter you email"
+                  />
+               </div>
+               <div className="mt-[35px] flex justify-between">
+                  <button className="text-[rgb(56,151,255)] font-semibold bg-transparent text-lg mr-[10px]">
+                     Create Account
+                  </button>
+                  <Button variant={ButtonVariant.PRIMARY} className="shadow-lg">
+                     Next
+                  </Button>
+               </div>
+               <div className="mt-[55px] text-center">
+                  <div
+                     className={clsx(
+                        'before:h-[2px] before:bg-white/10 before:block before:mr-[10px] before:flex-grow-[1]',
+                        'after:h-[2px] after:bg-white/10 after:block after:ml-[10px] after:flex-grow-[1]',
+                        'flex items-center justify-center',
+                        'text-center font-medium text-base',
+                        'text-white/70',
+                     )}
+                  >
+                     Log in with:{' '}
+                  </div>
+               </div>
+            </div>
+         </Modal>
       </header>
    );
 };

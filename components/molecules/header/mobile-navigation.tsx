@@ -29,7 +29,11 @@ export const MobileNav = () => {
                <HambergerIcon className="h-8 w-8 text-white" />
             )}
          </button>
-         <Modal isOpen={isOpen} onClose={setIsOpen}>
+         <Modal
+            isOpen={isOpen}
+            onClose={setIsOpen}
+            className="h-[calc(100vh-55px)]"
+         >
             <div
                className={`flex w-screen flex-shrink-0 transition-transform duration-[0.3s] ease-linear ${
                   inter.className
