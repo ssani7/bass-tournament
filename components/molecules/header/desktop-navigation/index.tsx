@@ -53,7 +53,7 @@ export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
                </li>
             ))}
 
-            <li
+            <div
                className={clsx(
                   'cursor-pointer flex items-center',
                   'from-[rgb(71,121,203)99%] to-[rgb(91,143,229)]',
@@ -62,7 +62,7 @@ export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
                )}
             >
                Get Plarium Play
-            </li>
+            </div>
          </ul>
       </nav>
    );
