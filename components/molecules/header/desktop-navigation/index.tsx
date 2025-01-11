@@ -13,7 +13,13 @@ const MENUS = {
    Resources: 'Resources',
 };
 
-export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
+export const DesktopNav = ({
+   navigation,
+   handleScrollTo,
+   homeRef,
+   partnerRef,
+   aboutRef,
+}: any) => {
    const [isOpenMenuItems, setIsOpenMenuItems] = useState(false);
    const [menu, setSelectedMenu] = useState(MENUS.Games);
 
@@ -25,10 +31,10 @@ export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
    return (
       <nav className="hidden lg:flex grow justify-center h-full">
          <ul className={clsx('text-white', 'flex items-center gap-5 h-full')}>
-            {navigation.map(({ name }) => (
-               <li key={name} className="static">
-                  <Link
-                     href={'/'}
+            {navigation.map(({ name, ref }: any) => (
+               <div key={name} className="static">
+                  <div
+                     onClick={() => handleScrollTo(ref)}
                      className={clsx(
                         'hover:bg-neutral-700',
                         'flex items-center text-left',
@@ -36,24 +42,16 @@ export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
                         'bg-transparent h-[calc(54px)] w-full font-bold',
                         'transition-[background-color] duration-[0.3s] delay-[0s] ease-[ease]',
                      )}
-                     onMouseOver={() => shownMenu(name)}
+                     // onMouseOver={() => shownMenu(name)}
                   >
                      <span className="px-4 flex items-center w-full relative cursor-pointer text-start">
                         <span className="text-[rgb(234,234,234)]">{name}</span>
                      </span>
-                  </Link>
-                  <MenuItems
-                     isOpenMenuItems={isOpenMenuItems}
-                     onMouseLeave={() => setIsOpenMenuItems(false)}
-                  >
-                     {menu === MENUS.Community && <MenuItemCommunity />}
-                     {menu === MENUS.Games && <MenuItemGames />}
-                     {menu === MENUS.Resources && <MenuItemResources />}
-                  </MenuItems>
-               </li>
+                  </div>
+               </div>
             ))}
 
-            <div
+            {/* <div
                className={clsx(
                   'cursor-pointer flex items-center',
                   'from-[rgb(71,121,203)99%] to-[rgb(91,143,229)]',
@@ -62,7 +60,7 @@ export const DesktopNav = ({ navigation }: { navigation: NavGroupProps[] }) => {
                )}
             >
                Get Plarium Play
-            </div>
+            </div> */}
          </ul>
       </nav>
    );

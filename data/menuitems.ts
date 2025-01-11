@@ -6,73 +6,13 @@ import {
 } from '@/utils/constants/community_image_menuitem';
 const menuitems_games = [
    {
-      name: 'Categories',
-      items: [
-         {
-            title: 'Popular Games',
-         },
-         {
-            title: 'Download Games',
-         },
-         {
-            title: 'New Games',
-         },
-         {
-            title: 'Free to Play Games',
-         },
-
-         {
-            title: 'Best Games',
-         },
-      ],
+      name: 'Home',
    },
    {
-      name: 'Platforms',
-      items: [
-         {
-            title: 'Browser Games',
-         },
-         {
-            title: 'PC Games',
-         },
-         {
-            title: 'Mac Games',
-         },
-         {
-            title: 'Mobile Games',
-         },
-         {
-            title: 'Flash Games',
-         },
-         {
-            title: 'HTML5 Games',
-         },
-      ],
+      name: 'About',
    },
    {
-      name: 'OS',
-      items: [
-         {
-            title: 'Window Games',
-         },
-         {
-            title: 'iOS Games',
-         },
-         {
-            title: 'Andriod Games',
-         },
-      ],
-   },
-   {
-      name: 'Devices',
-      items: [
-         {
-            title: 'iPhone Games',
-         },
-         {
-            title: 'iPad Games',
-         },
-      ],
+      name: 'Resources',
    },
 ];
 

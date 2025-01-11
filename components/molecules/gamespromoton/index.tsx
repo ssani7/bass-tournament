@@ -54,12 +54,12 @@ export const GamesPromotions = (props: TGamesPromProps) => {
                />
             </div>
 
-            <div
+            {/* <div
                className={clsx(
-                  `${className ? 'md:bottom-[-73px]' : 'md:bottom-[-75px]'}`,
-                  'z-[1] absolute left-[50%] translate-x-[-50%] bottom-[10px]',
-                  'w-[277px] md:h-[470px] lg:w-[460px] ',
-                  'h-[406px] md:w-[320px] lg:h-[650px]',
+                  `${className ? '' : ''}`,
+                  'z-[1] absolute left-[50%] translate-x-[-50%] ',
+                  'w-[277px] md:h-full lg:w-[460px] ',
+                  'md:w-[320px] ',
                   `transition-[transform,translate] ease-[ease,ease] duration-[0.3s,0.3s] delay-[0s,0s] lg:hover:translate-y-[-9px] lg:hover:scale-[1.03]`,
                )}
             >
@@ -70,13 +70,13 @@ export const GamesPromotions = (props: TGamesPromProps) => {
                   fill
                   alt="hero"
                />
-            </div>
+            </div> */}
          </div>
          <div
             className={clsx(
                `px-[15px] mt-[-60px] relative ${
                   className ? 'md:mr-[90px]' : 'md:pl-24'
-               } px-[15px] pb-[20px]  md:pt-20 z-[250]`,
+               } px-[15px] pb-[20px]  md:pt-[10rem] z-[250]`,
                'max-md:after:absolute max-md:after:left-0 max-md:after:right-0 max-md:after:bottom-0 max-md:after:overflow-hidden',
                'max-md:after:bg-[rgb(29,46,73,0.4)]',
                "max-md:after:content[''] max-md:after:rounded-b-lg",
@@ -90,38 +90,16 @@ export const GamesPromotions = (props: TGamesPromProps) => {
                <h2 className="font-anton text-2xl md:text-[32px] lg:text-4xl tracking-[2px] font-bold uppercase text-white  md:text-slate-800 mb-5">
                   {name}
                </h2>
-               <div className="hidden lg:flex">
-                  <div className="mr-3">
-                     <div className="flex flex-col ">
-                        <span className="text-xs text-white md:text-zinc-500 font-semibold text-center">
-                           Rating
-                        </span>
-                        <span className="font-bold text-xl text-white md:text-slate-700 text-center">
-                           {rating}
-                        </span>
-                        <span>
-                           <Rating />
-                        </span>
-                     </div>
-                  </div>
-                  <div className="flex self-center flex-wrap max-w-[350px]">
-                     {tags.map((tag) => (
-                        <Tag variant={'primary'} key={tag}>
-                           {tag}
-                        </Tag>
-                     ))}
-                  </div>
-               </div>
                <div className="text-white md:text-gray-500 mt-15px text-base lg:text-[18px] mb-[20px]">
                   {description}
                </div>
-               <div className="flex bg-white/80 max-md:rounded-lg p-[10px]">
+               <div className="flex flex-col lg:flex-row lg:bg-white/80 max-md:rounded-lg py-[10px] gap-5 lg:gap-2">
                   <Button
-                     containerClassName="hidden lg:block"
+                     containerClassName="lg:w-[15rem]"
                      variant={ButtonVariant.PRIMARY}
                      size={ButtonSize.EXTRA_LARGE}
                   >
-                     Download
+                     Play Now
                   </Button>
                   <Link
                      className="text-[rgb(31,124,223)] p-2 max-md:items-center max-md:flex w-full max-md:justify-center  group ml-5 font-semibold items-center inline-flex"

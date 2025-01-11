@@ -1,39 +1,48 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import { Logo } from '../icons';
 import { DesktopNav } from './desktop-navigation';
 import { MobileNav } from './mobile-navigation';
-import { LANGUAGES } from '@/data/language';
 import { useState } from 'react';
 import { Modal } from '../modal';
 import { Dialog } from '@headlessui/react';
-import { XCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Button, ButtonVariant } from '@/components/atom';
+import Image from 'next/image';
+import logo from '../../../public/logo.png';
+import { LANGUAGES } from '@/data/language';
+import { XCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export type NavGroupProps = {
    name: string;
 };
 
-const navigation = [
-   {
-      name: 'Games',
-   },
-   {
-      name: 'Community',
-   },
-   {
-      name: 'Resources',
-   },
-];
-
-export const Header = () => {
+export const Header = ({
+   handleScrollTo,
+   homeRef,
+   partnerRef,
+   aboutRef,
+}: any) => {
    const [langSwitcher, setLangSwitcher] = useState(false);
    const [isOpenLoginModal, setLoginModal] = useState(false);
+
+   const navigation = [
+      {
+         name: 'Home',
+         ref: homeRef,
+      },
+      {
+         name: 'About',
+         ref: aboutRef,
+      },
+      {
+         name: 'Investors',
+         ref: partnerRef,
+      },
+   ];
    return (
       <header
          className={clsx(
             'bg-[rgb(25,27,31)]',
-            'h-[55px]',
+            'h-[80px]',
             'fixed z-[5002] right-0 left-0 top-0',
             'block',
          )}
@@ -43,12 +52,20 @@ export const Header = () => {
                href={'/'}
                className="h-6 flex-none flex items-center justify-center"
             >
-               <Logo className="h-[30px] w-[40px] lg:h-[35px] lg:w-[50px]" />
+               <div className="h-[30px] w-[40px] lg:h-[70px] lg:w-fit">
+                  <Image className="h-full w-full" src={logo} alt="logo" />
+               </div>
             </Link>
-            <DesktopNav navigation={navigation} />
+            <DesktopNav
+               navigation={navigation}
+               handleScrollTo={handleScrollTo}
+               homeRef={homeRef}
+               aboutRef={aboutRef}
+               partnerRef={partnerRef}
+            />
             <MobileNav />
             <div className="mr-5 relative hidden lg:block">
-               <button onClick={() => setLangSwitcher(!langSwitcher)}>
+               {/* <button onClick={() => setLangSwitcher(!langSwitcher)}>
                   <span className="uppercase text-white text-xs">EN</span>
                </button>
                <div
@@ -70,16 +87,16 @@ export const Header = () => {
                         {lang}
                      </Link>
                   ))}
-               </div>
+               </div> */}
             </div>
 
             <div className="hidden lg:block pl-2 flex-none">
-               <button
+               {/* <button
                   className="rounded-md px-[17px] text-sm font-bold h-8 text-blue-400 bg-white"
                   onClick={() => setLoginModal(!isOpenLoginModal)}
                >
                   Log In
-               </button>
+               </button> */}
             </div>
          </div>
          <Modal

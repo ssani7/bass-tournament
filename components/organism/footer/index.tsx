@@ -11,7 +11,7 @@ export const Footer = () => {
 
    return (
       <footer className="bg-[#191b1f] text-white pt-7 relative">
-         <div className="w-full px-8  mb-16 mx-auto lg:max-w-[1440px] lg:px-[70px]">
+         {/* <div className="w-full px-8  mb-16 mx-auto lg:max-w-[1440px] lg:px-[70px]">
             <div className="flex flex-col lg:flex-row">
                <div className="mr-24 w-full lg:w-80 mb-8">
                   <div className="w-full">
@@ -85,19 +85,40 @@ export const Footer = () => {
                         <div className="text-xl font-semibold mb-4">{name}</div>
                         <ul>
                            {title.map((list) => (
-                              <li key={list.name} className="mb-2">
+                              <div key={list.name} className="mb-2">
                                  <Link
                                     href={'/'}
                                     className="text-base mb-1 text-white/80 hover:text-[#fcfcfc]"
                                  >
                                     {list.name}
                                  </Link>
-                              </li>
+                              </div>
                            ))}
                         </ul>
                      </div>
                   ))}
                </div>
+            </div>
+         </div> */}
+         <div className="flex flex-col gap-4 items-center justify-between font-space py-4 px-20">
+            <div className="flex flex-col gap-4 text-center">
+               <p className="text-primary">Bass © 2024 COPYRIGHT</p>
+               <p>
+                  Bass is a revolutionary Web3 fishing game that offers the
+                  perfect blend of entertainment and blockchain technology.
+                  Designed for both casual and competitive players, this game
+                  combines the relaxing joy of fishing with the excitement of
+                  earning blockchain rewards. Cast your line into beautifully
+                  crafted virtual waters, explore unique fishing spots, and reel
+                  in rare catches that can be tokenized as NFTs. Powered by a
+                  robust token economy, players can earn rewards through daily
+                  quests, tournaments, and trading their NFT catches. These
+                  tokens can be used to upgrade your fishing gear, unlock
+                  exclusive locations, or exchanged for real-world value. With
+                  stunning graphics and an engaging gameplay loop, this game
+                  offers endless entertainment while redefining the future of
+                  blockchain gaming.
+               </p>
             </div>
          </div>
          <div className="h-full bg-transparent lg:bg-black">
@@ -106,17 +127,17 @@ export const Footer = () => {
                   <div className="overflow-hidden">
                      <ul className="flex flex-wrap">
                         {footer.map(({ name }) => (
-                           <li
+                           <div
                               key={name}
                               className="leading-8 px-4 pb-1 lg:first:border-0 lg:border-l border-solid border-l-[rgb(79,77,77)] "
                            >
-                              <Link
-                                 href={'/'}
+                              <a
+                                 href={'https://www.bassweb3.com/'}
                                  className="text-base text-white/70 hover:text-[#fcfcfc] "
                               >
                                  {name}
-                              </Link>
-                           </li>
+                              </a>
+                           </div>
                         ))}
                      </ul>
                   </div>
