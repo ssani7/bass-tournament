@@ -66,7 +66,7 @@ export const MobileNav = () => {
                      {menuItems.map(({ name, link }) => (
                         <a
                            key={name}
-                           className="text-2xl font-extrabold mb-6"
+                           className="text-2xl font-extrabold mb-6 text-white"
                            target="_blank"
                            href={link}
                            onClick={() => {
