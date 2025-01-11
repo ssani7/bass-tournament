@@ -2,7 +2,7 @@ import { Games, Games2 } from '@/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper';
+import { Autoplay } from 'swiper/modules';
 import { Card } from '../card';
 
 export const AllGames = () => {

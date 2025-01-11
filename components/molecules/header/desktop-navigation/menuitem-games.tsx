@@ -5,7 +5,7 @@ import Link from 'next/link';
 export const MenuItemGames = () => {
    return (
       <div className="flex py-8 px-12">
-         {MENUITEMS_GAMES.map(({ name, items }) => (
+         {/* {MENUITEMS_GAMES.map(({ name, items }) => (
             <div key={name}>
                <div className="text-xl font-semibold mb-3">{name}</div>
                <div className="flex flex-col">
@@ -18,7 +18,7 @@ export const MenuItemGames = () => {
                   ))}
                </div>
             </div>
-         ))}
+         ))} */}
          <div>
             <div className="text-xl font-semibold mb-3">Genres</div>
             <div className="w-[450px]">
